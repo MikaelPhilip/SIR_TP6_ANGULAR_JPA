@@ -2,7 +2,7 @@
 <html>
   <head>
 		<meta charset="utf-8">
-		<title></title>
+		<title>Listes Chauffages</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -15,7 +15,22 @@
 		<link rel="stylesheet" href="styles/main.css">
 		<!-- endbuild -->
 	</head>
-	<body>
+	<body ng-app="data">
+		<nav class="navbar navbar-inverse">
+			<h1 style="color:white">Liste des chauffages</h1>
+		</nav>
+		<div ng-controller="ctrlListeChauffage">
+			<div ng-repeat="x in listHeaters">
+				<div class="panel panel-primary">
+					<div class="panel-heading"><h2>{{x.modelName}}</h2></div>
+						<div class="panel-body"> 
+						<div class="col-lg-6">
+							<p>Consommation: {{x.elecCosume}}</P>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<script src="bower_components/jquery/dist/jquery.js"></script>
 		<script src="bower_components/angular/angular.js"></script>
 		<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>

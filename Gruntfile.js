@@ -76,9 +76,10 @@ grunt.loadNpmTasks('grunt-connect-proxy');
         hostname: 'localhost',
         livereload: 35729
       },
-      proxies: [{
+      proxies: [
+	  {
 //TODCHANGE
-      context: '/rest/opower/dataHeater', // the context of the data service
+      context: '/rest/opower', // the context of the data service
       host: 'localhost', // wherever the data service is running
       port: 8080 // the port that the data service is running on
       }],
