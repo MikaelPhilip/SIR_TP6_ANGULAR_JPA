@@ -1,0 +1,47 @@
+==================================Installation==================================
+
+Note: pour certaine tâches/url (notament sur des ports différent) on va deleguer des tâches à d'autres services: il faut un proxy pour cela car sans le proxy une sécurité va empecher l'execution (car un serveur ne peux lire que du code qui vient de son serveur).
+
+1) Telecharger NodeJs et npm si on n'a pas les droits d'admins (sinon il est installé de base)
+
+http://abdelraoof.com/blog/2014/11/11/install-nodejs-without-admin-rights/
+
+2) Installer NodeJs et si on n'a pas les droits d'admin dézipper npm et créer un variable d'environement qui indique ou est npm.
+
+On a le liens entre le dossier npm et NodeJs: on pourra ainsi rajouter des librairies aux node.js
+
+=================================Utilisation de yoeman=================================
+
+1)Se mettre dans le dossier où on veut faire le site web et lancer la cmd "yo" (avec node.js)
+
+2)Une fois le dossier crée faire les cmd suivantes:
+
+npm i => installer les dépendances côté server (ou vérifier)
+bower i => installer les dépendance côté client (ou vérifier)
+grunt => builder le project
+grunt serve => lancer le server
+
+3)Modifier le fichier  GruntFile.js  pour les proxys (le remplacer dans le projet) et lancer npm install grunt-connect-proxy --save-dev pour avoir une dépendance nécessaire
+
+Dans le GruntFile indiquer ligne 80 l'url auquel on veut acceder dans le serveur lancé au port 8080
+
+proxies: [
+	  {
+      context: '/rest/opower', // the context of the data service
+      host: 'localhost', // wherever the data service is running
+      port: 8080 // the port that the data service is running on
+      }],
+	  
+4)On peut donc depuis l'application lancé au port 9000 interroger le serveur java au port 8080 pour l'applicaiton rest de Opower
+
+==================================Créer une interface======================================
+
+1)Créer le fichier html et le script js qui formeront la vue (avec angular js).
+
+2)Avec un $http get récuperer le json des données avec ce genre d'adresse "http://localhost:9000/rest/opower/personJSON" qui va appeller un service REST de l'application JAVA.
+
+/!\ Pour le POST l'envoit des paramêtres:
+
+Il faut faire trés attention pour l'envoit de paramêtre en POST: le $http envoit les paramêtres en JSON donc il faut que la méthode REST dans java attends de récuperer du JSON en paramêtre cela ce fait avec cette annotation:
+ @Consumes(MediaType.APPLICATION_JSON)
+ public Response addJSON(String json ) throws URISyntaxException { .... }
