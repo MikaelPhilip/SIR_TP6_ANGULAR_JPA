@@ -24,8 +24,8 @@ Note: pour certaine tâches/url (notament sur des ports différent) on va delegu
 
 Une fois la base de l'application construite nous avons fait quelques fonctions avec AngularJS qui vont manipuler le webService JAVA.Nous avons ici:
 
-A l'url http://localhost:9000/dataHeater.html : la liste de Chauffages (appel avec un Get d'une url qui appelle une méthode dans le WebService JAVA pour avoir la liste en JSON)  
-A l'url http://localhost:9000/dataPerson.html : la liste de Personnes (appel avec un Get d'une url qui appelle une méthode dans le WebService JAVA pour avoir la liste en JSON)  
-A l'url http://localhost:9000/subscribe.html : un formulaire pour rajouter une personne (appel avec un POST (avec passage de paramêtre) d'une url qui appelle une méthode dans le WebService JAVA pour rajouter une personne)  
+-A l'url http://localhost:9000/dataHeater.html : la liste de Chauffages (appel avec un Get d'une url qui appelle une méthode dans le WebService JAVA pour avoir la liste en JSON)  
+-A l'url http://localhost:9000/dataPerson.html : la liste de Personnes (appel avec un Get d'une url qui appelle une méthode dans le WebService JAVA pour avoir la liste en JSON)  
+-A l'url http://localhost:9000/subscribe.html : un formulaire pour rajouter une personne (appel avec un POST (avec passage de paramêtre) d'une url qui appelle une méthode dans le WebService JAVA pour rajouter une personne)  
 
 Pour voir l'ensemble des notes de ce tp vous pouvez consulter le fichier NoteTp.txt
